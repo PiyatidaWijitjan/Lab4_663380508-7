@@ -19,25 +19,25 @@ public class RobustnessTesting {
 
     @ParameterizedTest
     @CsvSource({
-        "50000, 3, -1, Standard",
-        "50000, 3, 0, Standard",
-        "50000, 3, 1, Standard",
-        "50000, 3, 500, Gold",
-        "50000, 3, 999, Gold",
-        "50000, 3, 1000, Gold",
-        "50000, 3, 1001, Standard",
+        "50000, 15, -1, Standard",
+        "50000, 15, 0, Standard",
+        "50000, 15, 1, Standard",
+        "50000, 15, 500, Gold",
+        "50000, 15, 999, Gold",
+        "50000, 15, 1000, Gold",
+        "50000, 15, 1001, Standard",
         "50000, -1, 500, Standard",
         "50000, 0, 500, Standard",
         "50000, 1, 500, Silver",
-        "50000, 6, 500, Standard",
-        "50000, 7, 500, Standard",
-        "50000, 8, 500, Standard",
-        "-1, 3, 500, Standard",
-        "0, 3, 500, Standard",
-        "1, 3, 500, Standard",
-        "99999, 3, 500, Gold",
-        "100000, 3, 500, Gold",
-        "100001, 3, 500, Standard"
+        "50000, 29, 500, Gold",
+        "50000, 30, 500, Gold",
+        "50000, 31, 500, Gold",
+        "-1, 15, 500, Standard",
+        "0, 15, 500, Standard",
+        "1, 15, 500, Standard",
+        "99999, 15, 500, Gold",
+        "100000, 15, 500, Gold",
+        "100001, 15, 500, Standard"
     })
     void testMembershipRank_Robustness(int purchaseTotal, int frequency, int pointCollected, String expectedResult) {
         String result = ranking.CalculateMembershipRank(purchaseTotal, frequency, pointCollected);
